@@ -1,0 +1,15 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+
+.CODE
+MAIN PROC
+    MOV AH,2
+    MOV DL,'V'
+    INT 21H     ;INT = INTERRUPT    
+    
+    ;MOV AH,2
+    MOV DL,'U'
+    INT 21H     ;INT = INTERRUPT  
+MAIN ENDP
+    END MAIN

@@ -1,0 +1,24 @@
+.MODEL SMALL
+.STACK 100H
+.DATA 
+NL EQU 0AH,0DH      ;EQU = EQUATES, EQU IS A CONSTANT WHOSE VALUE IS 0AH,0DH
+MSG DB "Hello world"
+MSG1 DB NL,"Hello Varendra University$"
+.CODE
+MAIN PROC
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    MOV AH,9
+    LEA DX,MSG      ;LEA = LOAD EFFECTIVE (OFFSET) ADDRESS
+    INT 21H
+    
+    
+    MOV AH,9
+    LEA DX,MSG1
+    INT 21H 
+    
+    MOV AH,4CH
+    INT 21H    
+MAIN ENDP
+    END MAIN
